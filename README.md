@@ -26,5 +26,5 @@ import (
 )
 
 // four hundred and twenty billion nine hundred and ninety nine thousand and fifteen
-fmt.println(shortscale.Shortscale(420_000_999_015))
+fmt.Println(shortscale.Shortscale(420_000_999_015))
 ```
