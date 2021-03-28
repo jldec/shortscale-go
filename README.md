@@ -1,7 +1,6 @@
 # shortscale
 
-[![CI](https://github.com/jldec/shortscale-go/workflows/CI/badge.svg)](https://github.com/jldec/shortscale-go/actions)  
-[Rust docs](https://docs.rs/shortscale) | [crates.io](https://crates.io/crates/shortscale)
+[![CI](https://github.com/jldec/shortscale-go/workflows/CI/badge.svg)](https://github.com/jldec/shortscale-go/actions)
 
 Go library to convert numbers into English words.
 
