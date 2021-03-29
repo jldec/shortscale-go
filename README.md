@@ -1,8 +1,9 @@
 # shortscale
 
-[![CI](https://github.com/jldec/shortscale-go/workflows/CI/badge.svg)](https://github.com/jldec/shortscale-go/actions)
+[![CI](https://github.com/jldec/shortscale-go/workflows/CI/badge.svg)](https://github.com/jldec/shortscale-go/actions)  
+**Go.dev** [github.com/jldec/shortscale-go](https://pkg.go.dev/github.com/jldec/shortscale-go)
 
-Go library to convert numbers into English words.
+Go package to convert numbers into English words.
 
 This was originally written as an exploration of JavaScript and Rust [documented here](https://jldec.me/forays-from-node-to-rust).
 
