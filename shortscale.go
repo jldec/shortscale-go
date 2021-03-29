@@ -4,8 +4,11 @@ import (
 	"strings"
 )
 
+// Shortscale converts numbers into English words.
+// Supports positive integers from 0 to 999_999_999_999_999_999.
+// Larger values return "(big number)".
 func Shortscale(n uint64) string {
-	if n < 21 {
+	if n <= 20 {
 		return numwords[n]
 	}
 	if n > 999_999_999_999_999_999 {
@@ -22,7 +25,6 @@ func Shortscale(n uint64) string {
 	return b.String()
 }
 
-// one to nintey nine
 func writeTensAndUnits(b *strings.Builder, n uint64, ifAnd bool) {
 	n = n % 100
 	if n == 0 {
@@ -35,7 +37,7 @@ func writeTensAndUnits(b *strings.Builder, n uint64, ifAnd bool) {
 		writeWord(b, numwords[n])
 		return
 	}
-	writeWord(b, numwords[n/10*10])
+	writeWord(b, numwords[n/10*10]) // tens
 	units := n % 10
 	if units > 0 {
 		writeWord(b, numwords[units])
