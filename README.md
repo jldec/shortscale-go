@@ -1,7 +1,7 @@
 # shortscale
 
 [![CI](https://github.com/jldec/shortscale-go/workflows/CI/badge.svg)](https://github.com/jldec/shortscale-go/actions)  
-**Go.dev** [github.com/jldec/shortscale-go](https://pkg.go.dev/github.com/jldec/shortscale-go)
+Go.dev [github.com/jldec/shortscale-go](https://pkg.go.dev/github.com/jldec/shortscale-go)
 
 Go package to convert numbers into English words.
 
