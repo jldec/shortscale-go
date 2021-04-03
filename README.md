@@ -28,3 +28,19 @@ import (
 // four hundred and twenty billion nine hundred and ninety nine thousand and fifteen
 fmt.Println(shortscale.Shortscale(420_000_999_015))
 ```
+
+### Benchmarks
+
+```
+goos: darwin
+goarch: amd64
+pkg: github.com/jldec/shortscale-go
+cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+BenchmarkShortscale-12    	 2527090	       468.3 ns/op	     240 B/op	       1 allocs/op
+--- BENCH: BenchmarkShortscale-12
+    shortscale_test.go:29: 1 iterations, 163 bytes
+    shortscale_test.go:29: 100 iterations, 16300 bytes
+    shortscale_test.go:29: 10000 iterations, 1630000 bytes
+    shortscale_test.go:29: 1000000 iterations, 163000000 bytes
+    shortscale_test.go:29: 2527090 iterations, 411915670 bytes
+```

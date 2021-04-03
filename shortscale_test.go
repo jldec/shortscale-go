@@ -1,16 +1,32 @@
-package shortscale
+package shortscale_test
 
 import (
 	"testing"
+
+	shortscale "github.com/jldec/shortscale-go"
 )
 
 func TestShortscale(t *testing.T) {
 	for _, test := range tests {
-		actual := Shortscale(test.num)
+		actual := shortscale.Shortscale(test.num)
 		if actual != test.words {
 			t.Errorf("Shortscale(%v)\nactual: %q\nexpect: %q", test.num, actual, test.words)
 		}
 	}
+}
+
+func BenchmarkShortscale(b *testing.B) {
+	const num uint64 = 9_007_199_254_740_991
+	var bytes uint64 = 0
+	var count uint64 = 0
+
+	for i := 0; i < b.N; i++ {
+		s := shortscale.Shortscale(num)
+		bytes += uint64(len(s))
+		count++
+	}
+
+	b.Logf("%d iterations, %d bytes", count, bytes)
 }
 
 type testcase struct {

@@ -15,6 +15,7 @@ func Shortscale(n uint64) string {
 		return "(big number)"
 	}
 	var b strings.Builder
+	b.Grow(238)
 	writeScale(&b, n, 1_000_000_000_000_000) // quadrillions
 	writeScale(&b, n, 1_000_000_000_000)     // trillions
 	writeScale(&b, n, 1_000_000_000)         // billions
