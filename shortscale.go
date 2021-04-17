@@ -14,15 +14,14 @@ func Shortscale(n uint64) string {
 	if n > 999_999_999_999_999_999 {
 		return "(big number)"
 	}
-	var b strings.Builder
-	b.Grow(238)
-	writeScale(&b, n, 1_000_000_000_000_000) // quadrillions
-	writeScale(&b, n, 1_000_000_000_000)     // trillions
-	writeScale(&b, n, 1_000_000_000)         // billions
-	writeScale(&b, n, 1_000_000)             // millions
-	writeScale(&b, n, 1_000)                 // thousands
-	writeHundreds(&b, n)
-	writeTensAndUnits(&b, n, b.Len() > 0)
+	b := new(strings.Builder)
+	writeScale(b, n, 1_000_000_000_000_000) // quadrillions
+	writeScale(b, n, 1_000_000_000_000)     // trillions
+	writeScale(b, n, 1_000_000_000)         // billions
+	writeScale(b, n, 1_000_000)             // millions
+	writeScale(b, n, 1_000)                 // thousands
+	writeHundreds(b, n)
+	writeTensAndUnits(b, n, b.Len() > 0)
 	return b.String()
 }
 
