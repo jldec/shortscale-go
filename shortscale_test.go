@@ -1,6 +1,7 @@
 package shortscale_test
 
 import (
+	"fmt"
 	"testing"
 
 	shortscale "github.com/jldec/shortscale-go"
@@ -15,8 +16,13 @@ func TestShortscale(t *testing.T) {
 	}
 }
 
+func ExampleShortscale() {
+	fmt.Println(shortscale.Shortscale(420_000_999_015))
+	// Output: four hundred and twenty billion nine hundred and ninety nine thousand and fifteen
+}
+
 func BenchmarkShortscale(b *testing.B) {
-	const num uint64 = 9_007_199_254_740_991
+	const num uint64 = 740_991
 	var bytes uint64 = 0
 	var count uint64 = 0
 

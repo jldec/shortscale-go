@@ -36,10 +36,10 @@ goos: darwin
 goarch: amd64
 pkg: github.com/jldec/shortscale-go
 cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
-2527090	       468.3 ns/op	     240 B/op	       1 allocs/op
+4053015	       291.8 ns/op	     120 B/op	       4 allocs/op
 
 goos: linux
 goarch: amd64
 pkg: github.com/jldec/shortscale-go
-1365160	       873 ns/op	     240 B/op	       1 allocs/op
+2569018	       472 ns/op	     120 B/op	       4 allocs/op
 ```
