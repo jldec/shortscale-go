@@ -9,10 +9,13 @@ import (
 
 func TestShortscale(t *testing.T) {
 	for _, test := range tests {
-		actual := shortscale.Shortscale(test.num)
-		if actual != test.words {
-			t.Errorf("Shortscale(%v)\nactual: %q\nexpect: %q", test.num, actual, test.words)
-		}
+		test := test // capture
+		t.Run(fmt.Sprint(test.num), func(t *testing.T) {
+			actual := shortscale.Shortscale(test.num)
+			if actual != test.words {
+				t.Errorf("\nactual: %q\nexpect: %q", actual, test.words)
+			}
+		})
 	}
 }
 
@@ -22,7 +25,7 @@ func ExampleShortscale() {
 }
 
 func BenchmarkShortscale(b *testing.B) {
-	const num uint64 = 740_991
+	const num uint64 = 740_991_777
 	var bytes uint64 = 0
 	var count uint64 = 0
 
